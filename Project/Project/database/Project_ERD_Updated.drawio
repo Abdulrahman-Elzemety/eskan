@@ -1,0 +1,134 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ERD" id="0">
+    <mxGraphModel dx="2273" dy="1321" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Person&lt;/b&gt;&lt;hr&gt;PK PersonID&lt;br&gt;FirstName&lt;br&gt;LastName&lt;br&gt;Email&amp;nbsp;&lt;br&gt;PasswordHash&lt;br&gt;Phone&lt;br&gt;Address&lt;div&gt;Gender&lt;br&gt;DateOfBirth&lt;br&gt;RegistrationDate&lt;/div&gt;" vertex="1">
+          <mxGeometry height="202" width="240" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Customer&lt;/b&gt;&lt;hr/&gt;PK/FK PersonID" vertex="1">
+          <mxGeometry height="58" width="240" x="42" y="296" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Specialist&lt;/b&gt;&lt;hr/&gt;PK/FK PersonID&lt;br/&gt;Department&lt;br/&gt;JobTitle" vertex="1">
+          <mxGeometry height="94" width="240" x="320" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="6AQ90L7pDACDHBkZ3F0B-42" edge="1" parent="1" source="5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6AQ90L7pDACDHBkZ3F0B-43" connectable="0" parent="6AQ90L7pDACDHBkZ3F0B-42" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:1" vertex="1">
+          <mxGeometry relative="1" x="-0.1201" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Service&lt;/b&gt;&lt;hr/&gt;PK ServiceID&lt;br/&gt;ServiceName&lt;br/&gt;Description" vertex="1">
+          <mxGeometry height="129" width="252" x="620" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;ServiceRequest&lt;/b&gt;&lt;hr/&gt;PK RequestID&lt;br/&gt;FK CustomerID&lt;br/&gt;FK ServiceID&lt;br/&gt;TrackingNumber&lt;br/&gt;SubmissionDate&lt;br/&gt;Status" vertex="1">
+          <mxGeometry height="148" width="240" x="626" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;CustomerFamilyInformation&lt;/b&gt;&lt;hr&gt;PK CustomerFamilyID&lt;br&gt;FK PersonID&lt;br&gt;MaritalStatus&lt;br&gt;FamilyMembers&lt;br&gt;Dependents" vertex="1">
+          <mxGeometry height="130" width="240" x="-114" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;CustomerEmploymentInformation&lt;/b&gt;&lt;hr&gt;PK CustomerEmploymentID&lt;br&gt;FK PersonID&lt;br&gt;Employer&lt;br&gt;JobTitle&lt;br&gt;YearsOfService&lt;br&gt;EmploymentStatus" vertex="1">
+          <mxGeometry height="148" width="240" x="116" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;CustomerFinancialInformation&lt;/b&gt;&lt;hr&gt;PK CustomerFinancialID&lt;br&gt;FK PersonID&lt;br&gt;MonthlyIncome&lt;br&gt;MonthlyExpenses&lt;br&gt;Liabilities" vertex="1">
+          <mxGeometry height="130" width="240" x="253" y="451" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Review&lt;/b&gt;&lt;hr&gt;PK ReviewID&lt;br&gt;FK RequestID&lt;br&gt;FK SpecialistID&lt;br&gt;Decision&lt;br&gt;ReviewNotes&lt;br&gt;ReviewDate" vertex="1">
+          <mxGeometry height="148" width="240" x="459" y="596" as="geometry" />
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" source="2" style="endArrow=block;html=1;" target="3" value="ISA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" source="2" style="endArrow=block;html=1;" target="4" value="ISA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="3" style="endArrow=block;html=1;" target="6" value="1:M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" source="5" style="endArrow=block;html=1;" target="6" value="1:M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="3" style="endArrow=block;html=1;" target="7" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="3" style="endArrow=block;html=1;" target="8" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" edge="1" parent="1" source="3" style="endArrow=block;html=1;" target="9" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" edge="1" parent="1" source="4" style="endArrow=block;html=1;" target="10" value="1:M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" source="6" style="endArrow=block;html=1;" target="10" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;RequestEmploymentInformation&lt;/b&gt;&lt;hr/&gt;PK RequestEmploymentID&lt;br/&gt;FK RequestID&lt;br/&gt;Employer&lt;br/&gt;JobTitle&lt;br/&gt;YearsOfService&lt;br/&gt;EmploymentStatus" vertex="1">
+          <mxGeometry as_="geometry" height="148" width="240" x="772" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;RequestFinancialInformation&lt;/b&gt;&lt;hr/&gt;PK RequestFinancialID&lt;br/&gt;FK RequestID&lt;br/&gt;MonthlyIncome&lt;br/&gt;MonthlyExpenses&lt;br/&gt;Liabilities" vertex="1">
+          <mxGeometry as_="geometry" height="130" width="240" x="620" y="763" as="geometry" />
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="6" style="endArrow=block;html=1;" target="20" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="6" style="endArrow=block;html=1;" target="21" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="6" style="endArrow=block;html=1;" target="22" value="1:1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;DocumentType&lt;/b&gt;&lt;hr/&gt;PK DocumentTypeID&lt;br/&gt;DocumentName" vertex="1">
+          <mxGeometry as_="geometry" height="140" width="220" x="1065" y="-116" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;ServiceRequiredDocument&lt;/b&gt;&lt;hr/&gt;PK ServiceRequiredDocumentID&lt;br/&gt;FK ServiceID&lt;br/&gt;FK DocumentTypeID&lt;br/&gt;Notes" vertex="1">
+          <mxGeometry as_="geometry" height="140" width="220" x="977" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;RequestDocument&lt;/b&gt;&lt;hr/&gt;PK RequestDocumentID&lt;br/&gt;FK RequestID&lt;br/&gt;FK DocumentTypeID&lt;br/&gt;FileName&lt;br/&gt;FilePath&lt;br/&gt;UploadDate" vertex="1">
+          <mxGeometry as_="geometry" height="140" width="220" x="1289" y="233" as="geometry" />
+        </mxCell>
+        <mxCell id="29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;ServiceEligibility&lt;/b&gt;&lt;hr/&gt;PK EligibilityID&lt;br/&gt;FK ServiceID&lt;br/&gt;MinimumAge&lt;br/&gt;MaximumAge&lt;br/&gt;Gender&lt;br/&gt;MaritalStatus&lt;br/&gt;EmploymentStatus&lt;br/&gt;MinimumIncome&lt;br/&gt;MaximumIncome&lt;br/&gt;AdditionalRequirements" vertex="1">
+          <mxGeometry as_="geometry" height="207" width="220" x="1190" y="419" as="geometry" />
+        </mxCell>
+        <mxCell id="30" edge="1" parent="1" source="5" style="endArrow=classic;html=1;endFill=1;" target="27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6AQ90L7pDACDHBkZ3F0B-36" connectable="0" parent="30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="-0.1535" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" edge="1" parent="1" source="26" style="endArrow=classic;html=1;startArrow=none;startFill=0;endFill=1;" target="27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6AQ90L7pDACDHBkZ3F0B-37" connectable="0" parent="31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="-0.0358" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="32" edge="1" parent="1" source="6" style="endArrow=classic;html=1;endFill=1;" target="28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6AQ90L7pDACDHBkZ3F0B-38" connectable="0" parent="32" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="-0.001" y="-1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" edge="1" parent="1" source="26" style="endArrow=classic;html=1;endFill=1;" target="28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6AQ90L7pDACDHBkZ3F0B-39" connectable="0" parent="33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="-0.0173" y="4" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;RequestFamilyInformation&lt;/b&gt;&lt;hr/&gt;PK RequestFamilyID&lt;br/&gt;FK RequestID&lt;br/&gt;MaritalStatus&lt;br/&gt;FamilyMembers&lt;br/&gt;Dependents" vertex="1">
+          <mxGeometry as_="geometry" height="130" width="240" x="913" y="442" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
